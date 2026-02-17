@@ -16,7 +16,7 @@ public class Main {
     @Getter
     private static AppConfig appConfig = null;
 
-    public static void main() {
+    public static void main(String[] args) {
         appConfig = new AppConfig();
         String token = appConfig.getAppConfigObject().getDiscordToken();
 
