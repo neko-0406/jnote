@@ -3,13 +3,17 @@ package org.app;
 import lombok.Getter;
 import net.dv8tion.jda.api.JDA;
 import net.dv8tion.jda.api.JDABuilder;
+import net.dv8tion.jda.api.events.session.ReadyEvent;
+import net.dv8tion.jda.api.hooks.ListenerAdapter;
 import net.dv8tion.jda.api.requests.GatewayIntent;
 import org.app.config.AppConfig;
+import org.app.task.SendQiitaArticle;
+import org.jetbrains.annotations.NotNull;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class Main {
+public class Main extends ListenerAdapter {
 
     @Getter
     private static JDA jda = null;
@@ -18,13 +22,22 @@ public class Main {
 
     public static void main(String[] args) {
         appConfig = new AppConfig();
-        String token = appConfig.getAppConfigObject().getDiscordToken();
+        String token = appConfig.getDiscordToken();
 
         List<GatewayIntent> intents = new ArrayList<>(List.of(
                 GatewayIntent.MESSAGE_CONTENT,
                 GatewayIntent.GUILD_MESSAGES
         ));
-        jda = JDABuilder.createDefault(token, intents)
-                .build();
+
+        JDABuilder builder  = JDABuilder.createDefault(token, intents);
+        builder.addEventListeners(new Main());
+
+        jda = builder.build();
+    }
+
+    @Override
+    public void onReady(@NotNull ReadyEvent event) {
+        System.out.println("Name: "+ event.getState().name());
+        System.out.println("==============bot is ready!!===============");
     }
 }
