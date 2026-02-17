@@ -10,7 +10,6 @@ import java.nio.file.Path;
 
 public class AppConfig {
 
-    @Getter
     private AppConfigObject appConfigObject;
 
     public AppConfig() {
@@ -36,5 +35,13 @@ public class AppConfig {
             throw new RuntimeException(e);
         }
 
+    }
+
+    public String getDiscordToken() {
+        return this.appConfigObject.getDiscordToken();
+    }
+
+    public String getQiitaAPIEndPoint() {
+        return this.appConfigObject.getQiitaAPIEndPoint();
     }
 }

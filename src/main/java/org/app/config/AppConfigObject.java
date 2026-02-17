@@ -7,4 +7,7 @@ public class AppConfigObject {
     @Getter
     @Setter
     private String discordToken;
+    @Getter
+    @Setter
+    private String qiitaAPIEndPoint;
 }
