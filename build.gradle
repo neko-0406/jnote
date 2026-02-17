@@ -16,6 +16,7 @@ dependencies {
 
     implementation("net.dv8tion:JDA:6.3.1")
     implementation 'com.google.code.gson:gson:2.13.2'
+    implementation("com.squareup.okhttp3:okhttp:5.3.0")
 
     compileOnly("org.projectlombok:lombok:1.18.42")
     annotationProcessor("org.projectlombok:lombok:1.18.42")
