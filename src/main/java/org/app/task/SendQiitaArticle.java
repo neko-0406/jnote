@@ -67,7 +67,7 @@ public class SendQiitaArticle {
             articleEmbeds.add(
                     new EmbedBuilder()
                             .setTitle(item.getTitle())
-                            .setDescription(item.getBody().substring(0, 100) + "...")
+                            .setDescription(item.getBody().substring(0, 200) + "...")
                             .setUrl(item.getUrl())
                             .setFooter("create at:" + item.getCreateAt())
                             .build()
