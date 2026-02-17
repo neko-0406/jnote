@@ -9,7 +9,7 @@ public class QiitaArticle {
     private String title;
     private String body;
     private String url;
-    @SerializedName(value = "create_at")
+    @SerializedName(value = "created_at")
     private String createAt;
     @Override
     public String toString() {
