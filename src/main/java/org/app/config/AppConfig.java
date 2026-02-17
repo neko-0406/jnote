@@ -44,4 +44,8 @@ public class AppConfig {
     public String getQiitaAPIEndPoint() {
         return this.appConfigObject.getQiitaAPIEndPoint();
     }
+
+    public String getQiitaChannelId() {
+        return this.appConfigObject.getQiitaChannelId();
+    }
 }

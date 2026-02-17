@@ -10,4 +10,7 @@ public class AppConfigObject {
     @Getter
     @Setter
     private String qiitaAPIEndPoint;
+    @Getter
+    @Setter
+    private String qiitaChannelId;
 }
