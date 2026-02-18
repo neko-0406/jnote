@@ -13,4 +13,7 @@ public class AppConfigObject {
     @Getter
     @Setter
     private String qiitaChannelId;
+    @Getter
+    @Setter
+    private String guildId;
 }

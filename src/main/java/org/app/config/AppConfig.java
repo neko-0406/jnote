@@ -48,4 +48,6 @@ public class AppConfig {
     public String getQiitaChannelId() {
         return this.appConfigObject.getQiitaChannelId();
     }
+
+    public String getGuildId() { return this.appConfigObject.getGuildId(); }
 }
